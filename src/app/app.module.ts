@@ -13,11 +13,12 @@ import { RegisterComponent } from "./login/register.component";
 
 //temporal
 import { FormsModule } from "@angular/forms";
+import { SettingsService } from './services/settings.service';
 
 @NgModule({
   declarations: [AppComponent, LoginComponent, RegisterComponent],
   imports: [BrowserModule, APP_ROUTES, PagesModule, FormsModule],
-  providers: [],
+  providers: [SettingsService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
