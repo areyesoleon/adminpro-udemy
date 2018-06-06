@@ -4,13 +4,14 @@ import {
   SettingsService,
   SidebarService,
   SharedService,
-  UsuarioService
+  UsuarioService,
+  LoginGuardGuard
 } from "./service.index";
 import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
   imports: [CommonModule, HttpClientModule],
-  providers: [SettingsService, SidebarService, SharedService,UsuarioService],
+  providers: [SettingsService, SidebarService, SharedService,UsuarioService,LoginGuardGuard],
   declarations: []
 })
 export class ServiceModule {}
