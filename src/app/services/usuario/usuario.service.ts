@@ -106,4 +106,12 @@ export class UsuarioService {
     return this.http.get(url)
     .map((resp:any) => resp.usuarios);
   }
+
+  borrarUsuario(id:string){
+    const url = URL_SERVICIOS + '/usuario/'+ id +'?token=' + this.token;
+    return this.http.delete(url).map((resp:any) => {
+      swal('Usuario Borrado','El usuario fue eliminado correctamente','success');
+      return true;
+    });
+  }
 }
