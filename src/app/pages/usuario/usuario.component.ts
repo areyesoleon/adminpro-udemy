@@ -79,4 +79,9 @@ export class UsuarioComponent implements OnInit {
 
   }
 
+  guardarUsuario(usuario: Usuario){
+    this._usuarioServices.actualizarUsuario(usuario)
+    .subscribe();
+  }
+
 }

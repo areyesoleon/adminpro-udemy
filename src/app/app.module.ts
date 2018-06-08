@@ -15,7 +15,6 @@ import { RegisterComponent } from "./login/register.component";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 //servicos
 import { ServiceModule } from './services/service.module';
-
 @NgModule({
   declarations: [AppComponent, LoginComponent, RegisterComponent],
   imports: [BrowserModule, APP_ROUTES, PagesModule, FormsModule,ServiceModule, ReactiveFormsModule],

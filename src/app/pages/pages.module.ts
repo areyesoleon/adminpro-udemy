@@ -23,6 +23,7 @@ import { PipesModule } from "../pipes/pipes.module";
 import { ProfileComponent } from './profile/profile.component';
 import { CommonModule } from "@angular/common";
 import { UsuarioComponent } from './usuario/usuario.component';
+import { ModalUploadComponent } from "../components/modal-upload/modal-upload.component";
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { UsuarioComponent } from './usuario/usuario.component';
     PromesasComponent,
     RxjsComponent,
     ProfileComponent,
-    UsuarioComponent
+    UsuarioComponent,
+    ModalUploadComponent
   ],
   exports: [
     DashboardComponent,
