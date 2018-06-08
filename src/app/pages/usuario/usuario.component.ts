@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Usuario } from '../../models/usuario.model';
 import { UsuarioService } from '../../services/service.index';
+import { ModalUploadService } from '../../components/modal-upload/modal-upload.service';
 declare var swal: any;
 
 @Component({
@@ -15,7 +16,8 @@ export class UsuarioComponent implements OnInit {
   totalRegistros: number = 0;
   cargando: boolean = true;
   constructor(
-    public _usuarioServices: UsuarioService
+    public _usuarioServices: UsuarioService,
+    public _modalUploadServe: ModalUploadService
   ) { }
 
   ngOnInit() {
