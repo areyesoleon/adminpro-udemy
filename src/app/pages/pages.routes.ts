@@ -9,6 +9,7 @@ import { RxjsComponent } from "./rxjs/rxjs.component";
 import { LoginGuardGuard } from "../services/service.index";
 import { ProfileComponent } from "./profile/profile.component";
 import { UsuarioComponent } from "./usuario/usuario.component";
+import { HospitalesComponent } from "./hospitales/hospitales.component";
 
 const paegesRoutes: Routes = [
   {
@@ -25,6 +26,7 @@ const paegesRoutes: Routes = [
       { path: "perfil", component: ProfileComponent, data: {titulo:'Perfil del usuario'} },
       //Mantenimientos
       { path: "usuarios", component: UsuarioComponent, data: {titulo:'Mantenimiento de usuarios'} },
+      { path: "hospitales", component: HospitalesComponent, data: {titulo:'Mantenimiento de hospitales'} },
       { path: "", redirectTo: "/dashboard", pathMatch: "full" }
     ]
   }
