@@ -43,9 +43,9 @@
                 <button [routerLink]="['/medico', medico._id]" class="btn btn-primary" type="button">
                   <i class="fa fa-edit"></i>
                 </button>
-                <a (click)="borrarMedico(medico)" class="btn btn-danger" type="button">
+                <button (click)="borrarMedico(medico)" class="btn btn-danger" type="button">
                   <i class="fa fa-trash-o"></i>
-                </a>
+                </button>
               </td>
             </tr>
           </tbody>
