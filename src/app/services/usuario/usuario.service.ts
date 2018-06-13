@@ -3,8 +3,10 @@ import { Usuario } from '../../models/usuario.model';
 import { HttpClient } from '@angular/common/http';
 import { URL_SERVICIOS } from '../../config/config';
 import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
 import { Router } from '@angular/router';
 import { SubirArchivoService } from '../subir-archivo/subir-archivo.service';
+import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class UsuarioService {
@@ -25,6 +27,9 @@ export class UsuarioService {
     .map((resp: any) =>{
       swal('Usuario Creado',usuario.email,'success')
       return resp.usuario;
+    }).catch((err:any) => {
+      swal(err.error.mensaje,err.error.errors.message,'error');
+      return Observable.throw(err);
     });
   }
 
@@ -44,6 +49,9 @@ export class UsuarioService {
       this.token = resp.token;
       this.menu = resp.menu;
       return true;
+    }).catch((err:any) => {
+      swal('Error en el login',err.error.mensaje,'error');
+      return Observable.throw(err)
     });
   }
 
@@ -91,6 +99,9 @@ export class UsuarioService {
       }
       swal('Usuario actualizado', usuario.nombre,'success');
       return true;
+    }).catch((err:any) => {
+      swal(err.error.mensaje,err.error.errors.message,'error');
+      return Observable.throw(err);
     });
   }
 
