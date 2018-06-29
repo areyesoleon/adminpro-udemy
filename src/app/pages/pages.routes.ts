@@ -6,7 +6,7 @@ import { Graficas1Component } from "./graficas1/graficas1.component";
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
 import { PromesasComponent } from "./promesas/promesas.component";
 import { RxjsComponent } from "./rxjs/rxjs.component";
-import { LoginGuardGuard, AdminGuard } from "../services/service.index";
+import { AdminGuard, VerificaTokenGuard } from "../services/service.index";
 import { ProfileComponent } from "./profile/profile.component";
 import { UsuarioComponent } from "./usuario/usuario.component";
 import { HospitalesComponent } from "./hospitales/hospitales.component";
@@ -15,7 +15,12 @@ import { MedicoComponent } from "./medicos/medico.component";
 import { BusquedaComponent } from "./busqueda/busqueda.component";
 
 const paegesRoutes: Routes = [
-  { path: "dashboard", component: DashboardComponent, data: { titulo: 'Dashboard' } },
+  {
+    path: "dashboard",
+    component: DashboardComponent,
+    data: { titulo: 'Dashboard' },
+    canActivate:[VerificaTokenGuard]
+  },
   { path: "progress", component: ProgessComponent, data: { titulo: 'Progress Bar' } },
   { path: "graficas1", component: Graficas1Component, data: { titulo: 'Grafica' } },
   { path: "promesas", component: PromesasComponent, data: { titulo: 'Promesa' } },

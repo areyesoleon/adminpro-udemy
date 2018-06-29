@@ -17,7 +17,7 @@ import { ModalUploadService } from "../components/modal-upload/modal-upload.serv
 
 @NgModule({
   imports: [CommonModule, HttpClientModule],
-  providers: [SettingsService, SidebarService, SharedService,UsuarioService,HospitalService,LoginGuardGuard,AdminGuard,SubirArchivoService, ModalUploadService,MedicoService],
+  providers: [SettingsService, SidebarService, SharedService,UsuarioService,HospitalService,LoginGuardGuard,AdminGuard,SubirArchivoService, ModalUploadService,MedicoService, VerificaTokenGuard],
   declarations: []
 })
 export class ServiceModule {}
